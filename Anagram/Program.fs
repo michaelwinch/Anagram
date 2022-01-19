@@ -3,10 +3,10 @@ open System.IO
 
 let groupAnagrams (words: string list) =
     words
-    |> List.groupBy (Seq.sort >> String.Concat)
-    |> List.map snd
+    |> Seq.groupBy (Seq.sort >> String.Concat)
+    |> Seq.map snd
 
-let outputGroups = List.iter (String.concat "," >> printfn "%s\n")
+let outputGroups = Seq.iter (String.concat "," >> printfn "%s\n")
 
 let groupAnagramsAndOutput = groupAnagrams >> outputGroups
 
