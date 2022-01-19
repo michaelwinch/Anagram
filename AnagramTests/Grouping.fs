@@ -22,7 +22,7 @@ let ``Matching words should be in the same group`` () =
 [<Test>]
 let ``Matching words should be correctly grouped when preceded by a non matching word`` () =
     let actual = Program.groupAnagrams ["asd"; "qwe"; "ewq"]
-    let expected = [["qwe"; "ewq"]; ["asd"]]
+    let expected = [["asd"]; ["qwe"; "ewq"]]
     Assert.AreEqual (expected, actual)
 
 [<Test>]
